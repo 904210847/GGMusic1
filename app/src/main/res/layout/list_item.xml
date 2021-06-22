@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    在音乐播放器列表中，每一项需要显示四项信息，分别是：
+        歌曲序号，在布局中使用TextView显示，id为tv_order；
+        歌曲名，在布局中使用TextView显示，id为tv_title；
+        歌手名，在布局中使用TextView显示，id为tv_artist；
+        分割线，用于表示每一项的分割，在布局中使用View显示，id为divider。-->
+    <TextView
+        android:id="@+id/tv_order"
+        android:text="1"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="Title"
+        android:textSize="18sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_order"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/tv_artist"
+        android:text="Artist name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="@id/tv_title"/>
+
+<!--    注：分割线View控件(id:divider)的background属性为自定义的颜色@color/colorDivider，
+        应在/res/values/colors.xml文件中进行定义，在本项目中设置其颜色值为#4DAAA9A9。-->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorDivider"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        app:layout_constraintTop_toBottomOf="@id/tv_artist"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
